@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "EliminarLibro";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+@model LibroModel
+<h1>EliminarLibro</h1>
+
+<div>
+
+    <form asp-action="EliminarUnLibro" asp-controller="TblLibro" method="post">
+
+        <input asp-for="IdRows" type="hidden" class="form-control">
+
+        <div class="alert alert-warning role="alert">
+            ¿Desea eliminar el contacto : @Html.DisplayTextFor(m => m.StrNombreLibro) ?
+        </div>
+
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="LeerLibro" asp-controller="TblLibro" class="btn btn-warning">Volver a la lista</a>
+    </form>
+</div>

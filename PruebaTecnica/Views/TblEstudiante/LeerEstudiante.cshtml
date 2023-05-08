@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewData["Title"] = "LeerEstudiante";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+@model List<EstudianteModel>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+        height: 60em;
+    }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+        padding-top: 10px;
+        background-color: royalblue;
+        height: 100%;
+        width: 100%
+    }
+</style>
+
+<body class="bg-dark bg-light">
+    <div class="container text-center">
+        <div class="row content">
+            <div class="col-lg-2 sidenav">
+
+                <br />
+                <div class="container">
+                    <h2>ADMINISTRACIÓN DE ESTUDIANTES</h2>
+                    <hr>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>NOMBRE COMPLETO</th>
+                                <th>DOCUMENTO DE IDENTIDAD</th>
+                                <th>PROGRAMA ESTUDIANTIL</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model)
+                            {
+                            <tr>
+                            <td>@item.StrNombre</td>
+                            <td>@item.IntDocumento</td>
+                            <td>@item.StrPrograma</td>
+                            <td>
+                                <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblEstudiante" asp-route-IdRows="@item.IdRows" asp-action="EditarEstudiante">Editar</a>
+                                <a asp-area="" asp-controller="TblEstudiante" asp-action="EliminarEstudiante" class="btn btn-danger btn-sm" asp-route-IdRows="@item.IdRows">Eliminar</a>
+                            </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div>
+                            <a class="btn btn-primary active bg-success text-white" aria-current="page" asp-area="" asp-controller="TblEstudiante" asp-action="InsertarEstudiante">Crear Nuevo Registro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+

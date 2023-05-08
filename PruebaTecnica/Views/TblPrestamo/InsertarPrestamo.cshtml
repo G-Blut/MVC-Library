@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "InsertarPrestamo";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+@model PrestamoModel
+<style>
+    .row.content {
+        height: 20em;
+    }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+        padding-top: 10px;
+        background-color:;
+        height: 80%;
+        width: 100%
+    }
+</style>
+
+
+<body>
+    <div class="container-fluid bg-dark bg-light">
+        <div class="container align-content-lg-end">
+            <div class="row content">
+                <div class="container text-lg-center bg-warning">
+                    <br>
+                    <h1 class="align-content-center">REGISTRO DE PRÉSTAMO</h1>
+                </div>
+                
+                <br />
+                <div>
+                    <form asp-action="InsertarPrestamo" asp-controller="TblPrestamo" method="post">
+                        <br />
+                        <div class="input-group mb-3">
+                            <span asp-validation-for="StrNombreLibro" class="input-group-text" id="basic-addon1">Titulo del Libro</span>
+                            <input asp-for="StrNombreLibro" type="text" class="form-check-inline">
+                        </div>
+
+                        <div class="input-group mb-3" >
+                            <span asp-validation-for="StrNombre" class="input-group-text" id="basic-addon2">Nombre del Estudiante</span>
+                            <input asp-for="StrNombre" type="text" class="form-check-inline">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span asp-validation-for="DtmFechaRegreso" class="input-group-text" id="basic-addon3">Valido el prestamo hasta</span>
+                            <input asp-for="DtmFechaRegreso" type="text" class="form-check-inline" placeholder="        YYYY/MM/DD" id="basic-url" aria-describedby="basic-addon3">
+                        </div>
+                        
+                        <div class="align-content-center">
+                        <button type="submit" class="btn btn-outline-dark btn bg-success"> Guardar</button> <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblPrestamo" asp-action="LeerPrestamo">Regresar</a>
+                        </div>
+
+                        <br />
+
+                        <div>
+                            <a class="btn btn-primary active bg-light text-dark" aria-current="page" asp-area="" asp-controller="TblLibro" asp-action="LeerLibro">Verificar Registro del Libro</a>
+                            <a class="btn btn-primary active bg-secondary text-dark" aria-current="page" asp-area="" asp-controller="TblEstudiante" asp-action="LeerEstudiante">Verificar Registro del Estudiante</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

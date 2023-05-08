@@ -1,0 +1,41 @@
+﻿@model PruebaTecnica.Models.EstudianteModel
+
+@{
+    ViewData["Title"] = "InsertarEstudiante";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+
+<div class=" bg-info">
+
+    <div class="bg-warning">
+        <h1>Registro de estudiantes</h1>
+    </div>
+    <br />
+        <form asp-action="InsertarEstudiante" asp-controller="TblEstudiante" method="post">
+            <div class="input-group mb-3">
+                <span  asp-validation-for="StrNombre" class="input-group-text" id="basic-addon1">Nombre Completo</span>
+                <input asp-for="StrNombre" type="text" class="form-check-inline">
+            </div>
+
+            <div class="input-group mb-3" >
+                <span asp-validation-for="IntDocumento" class="input-group-text" id="basic-addon2">Documento de Identidad</span>
+                <input asp-for="IntDocumento" type="text" class="form-check-inline">
+            </div>
+
+            <label for="basic-url" class="form-label"><strong>Dato Estudiantil</strong></label>
+
+            <div class="input-group mb-3">
+                <span asp-validation-for="StrPrograma" class="input-group-text" id="basic-addon2">Programa al que pertenece</span>
+                <input asp-for="StrPrograma" type="text" class="form-check-inline">
+            </div>
+        <button type="submit" class="btn btn-outline-dark btn bg-success"> Guardar</button> <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblEstudiante" asp-action="LeerEstudiante">Regresar</a>
+
+    </form>
+<br>
+
+
+<br />
+    <br />
+    <br />
+    <br />
+</div>

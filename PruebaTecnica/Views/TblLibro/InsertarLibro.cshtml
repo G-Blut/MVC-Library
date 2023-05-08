@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "InsertarLibro";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+@model LibroModel
+<div class=" bg-info">
+
+    <div class="bg-warning">
+        <h1>Registro de libros</h1>
+    </div>
+    <br />
+    <form asp-action="InsertarLibro" asp-controller="TblLibro" method="post">
+        <div class="input-group mb-3">
+            <span asp-validation-for="StrNombreLibro" class="input-group-text" id="basic-addon1">Titulo</span>
+            <input asp-for="StrNombreLibro" type="text" class="form-check-inline">
+            
+        </div>
+
+        <div class="input-group mb-3" >
+            <span asp-validation-for="StrNomAutor" class="input-group-text" id="basic-addon2">Autor</span>
+            <input asp-for="StrNomAutor" type="text" class="form-check-inline">
+        </div>
+
+        <label for="basic-url" class="form-label"><strong>Datos cronologicos</strong></label>
+
+        <div class="input-group mb-3">
+            <span asp-validation-for="DtmPublicacion" class="input-group-text" id="basic-addon3">Fecha de publicacion de la obra</span>
+            <input asp-for="DtmPublicacion" type="text" class="form-check-inline" placeholder="        YYYY/MM/DD" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        
+        <div class="input-group mb-3">
+            <span asp-validation-for="DtmNacimiento" class="input-group-text" id="basic-addon2">Fecha de Nacimiento del Autor</span>
+            <input asp-for="DtmNacimiento" type="text" class="form-check-inline" placeholder="          YYYY/MM/DD" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <div class="input-group mb-3">
+            <span asp-validation-for="StrLuNacimiento" class="input-group-text" id="basic-addon3">Lugar de Nacimiento del autor</span>
+            <input asp-for="StrLuNacimiento" type="text" class="form-check-inline" placeholder="           Ciudad, país" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+
+        <button type="submit" class="btn btn-outline-dark btn bg-success"> Guardar</button> <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblLibro" asp-action="LeerLibro">Regresar</a>
+
+    </form>
+<br>
+<div>
+
+</div>
+
+<br />
+    <br />
+    <br />
+    <br />
+</div>

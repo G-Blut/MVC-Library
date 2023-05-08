@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "LeerLibro";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+@model List<LibroModel>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<style>
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+        height: 60em;
+    }
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+        padding-top: 10px;
+        background-color: royalblue;
+        height: 100%;
+        width:100%
+    }
+   
+</style>
+
+<body class="bg-black">
+    <div class="container text-center">
+        <div class="row content">
+            <div class="col-lg-2 sidenav">
+
+                <br />
+                <div class="container">
+                    <h2>ADMINISTRACIÓN DE LIBROS</h2>
+                    <hr>
+                    <table class="table table-dark table-striped">
+                        <thead>
+                            <tr>
+                                <th>TITULO</th>
+                                <th>AUTOR</th>
+                                <th>LUGAR DE NACIMIENTO</th>
+                                <th>FECHA DE NACIMIENTO</th>
+                                <th>FECHA DE PUBLICACIÓN</th>
+                                <th>ACCIONES</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var item in Model)
+                            {
+                            <tr>
+                            <td>@item.StrNombreLibro</td>
+                            <td>@item.StrNomAutor</td>
+                            <td>@item.StrLuNacimiento</td>
+                            <td>@item.DtmNacimiento</td>
+                            <td>@item.DtmPublicacion</td>
+                                    <td><a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblLibro" asp-route-IdRows="@item.IdRows" asp-action="EditarLibro">Editar</a> <a class="btn btn-primary active bg-danger  text-white" aria-current="page" asp-area="" asp-controller="TblLibro" asp-route-IdRows="@item.IdRows" asp-action="EliminarLibro">Eliminar</a>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <div>
+                        <a class="btn btn-primary active bg-success text-white" aria-current="page" asp-area="" asp-controller="TblLibro" asp-action="InsertarLibro">Crear Nuevo Registro</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

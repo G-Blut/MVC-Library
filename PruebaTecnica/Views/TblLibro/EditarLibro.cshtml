@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "EditarLibro";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+
+@model LibroModel
+<div class=" bg-info">
+
+    <div class="bg-warning">
+        <h1>Edición del registro de libros</h1>
+    </div>
+    <br />
+    <form asp-action="ActualizarLibro" asp-controller="TblLibro" method="post" class="container  m-auto ">
+        <input hidden asp-for="IdRows" type="text" class="form-check-inline" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Titulo</span>
+            <input asp-for="StrNombreLibro" type="text" class="form-check-inline" placeholder="" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Autor</span>
+            <input asp-for="StrNomAutor" type="text" class="form-check-inline" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <label for="basic-url" class="form-label"><strong>Datos cronologicos</strong></label>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Fecha de publicacion de la obra</span>
+            <input asp-for="DtmPublicacion" type="text" class="form-check-inline" placeholder="        YYYY/MM/DD" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">Fecha de Nacimiento del Autor</span>
+            <input asp-for="DtmNacimiento" type="text" class="form-check-inline" placeholder="          YYYY/MM/DD" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Lugar de Nacimiento del Autor</span>
+            <input asp-for="StrLuNacimiento" type="text" class="form-check-inline" placeholder="           Ciudad, país" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <br>
+        <div class="align-content-center">
+            <button type="submit" class="btn btn-outline-dark btn bg-success"> Guardar</button> <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblLibro" asp-action="LeerLibro">Regresar</a>
+        </div>
+    </form>
+
+    <br />
+    <br />
+    <br />
+    <br />
+</div>

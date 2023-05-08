@@ -1,0 +1,47 @@
+﻿@model PruebaTecnica.Models.EstudianteModel
+
+@{
+    ViewData["Title"] = "EditarEstudiante";
+    Layout = "~/Views/Shared/LayoutMod.cshtml";
+}
+
+<div class=" bg-info">
+
+    <div class="bg-warning">
+        <h1>Edición del registro de estudiantes</h1>
+    </div>
+    <br />
+
+    <form asp-action="ActualizarEstudiante" asp-controller="TblEstudiante" method="post" class="container  m-auto ">
+        <input hidden asp-for="IdRows" type="text" class="form-check-inline" aria-label="Username" aria-describedby="basic-addon1">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Nombre Completo</span>
+            <input asp-for="StrNombre" type="text" class="form-check-inline" aria-label="Username" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Documento de Identidad</span>
+            <input asp-for="IntDocumento" type="text" class="form-check-inline" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <label for="basic-url" class="form-label"><strong>Dato Estudiantil</strong></label>
+
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon2">Programa al que pertenece</span>
+            <input asp-for="StrPrograma" type="text" class="form-check-inline" aria-label="Recipient's username" aria-describedby="basic-addon2">
+        </div>
+
+        <br>
+        <div class="align-content-center">
+            <button type="submit" class="btn btn-outline-dark btn bg-success"> Guardar</button> <a class="btn btn-primary active bg-warning text-dark" aria-current="page" asp-area="" asp-controller="TblEstudiante" asp-action="LeerEstudiante">Regresar</a>
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+        
+    </form>
+</div>
